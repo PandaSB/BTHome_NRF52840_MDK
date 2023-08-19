@@ -1,5 +1,5 @@
 /** @file
- *  @brief Button Service
+ *  @brief Button Service header
  */
 
 /*

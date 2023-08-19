@@ -1,9 +1,9 @@
 /** @file
- *  @brief I2C Service 
+ *  @brief I2C Service header
  */
 
 /*
- * Copyright (c) 2023 BARTHELEMY Stéphane 
+ * Copyright (c) 2023 BARTHELEMY Stéphane
  *
  * SPDX-License-Identifier: Apache-2.0
  */
