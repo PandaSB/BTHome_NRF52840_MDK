@@ -1,0 +1,29 @@
+/ {
+	soc {
+		i2c0: i2c@40003000 {
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			reg = < 0x40003000 0x1000 >;
+			clock-frequency = < 0x186a0 >;
+			interrupts = < 0x3 0x1 >;
+			status = "okay";
+			label = "I2C_0";
+			compatible = "nordic,nrf-twi";
+			sda-pin = < 0x1f >;
+			scl-pin = < 0x1d >;
+		};
+
+		i2c1: i2c@40004000 {
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			reg = < 0x40004000 0x1000 >;
+			clock-frequency = < 0x186a0 >;
+			interrupts = < 0x4 0x1 >;
+			status = "disabled";
+			label = "I2C_1";
+			compatible = "nordic,nrf-twi";
+			sda-pin = < 0x1a >;
+			scl-pin = < 0x1b >;
+		};
+	};
+};
