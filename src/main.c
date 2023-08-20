@@ -100,7 +100,7 @@ int main(void) {
     }
 
     for (;;) {
-        led_set(3, true);
+        led_set(2, true);
         pressure = bmp180_readPressure();
         temp = bmp180_readTemperature();
         temp2 = am2320_readTemperature();
@@ -128,7 +128,7 @@ int main(void) {
         if (err) {
             printk("Failed to update advertising data (err %d)\n", err);
         }
-        led_set(3, false);
+        led_set(2, false);
         k_sleep(K_MSEC(BT_GAP_ADV_SLOW_INT_MIN));
     }
     return 0;

@@ -18,13 +18,13 @@
 
 #include <led.h>
 
-#define NB_LED 4
+#define NB_LED 3
 
 LOG_MODULE_REGISTER(led);
 static const struct gpio_dt_spec led0 = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
 static const struct gpio_dt_spec led1 = GPIO_DT_SPEC_GET(DT_ALIAS(led1), gpios);
 static const struct gpio_dt_spec led2 = GPIO_DT_SPEC_GET(DT_ALIAS(led2), gpios);
-static const struct gpio_dt_spec led3 = GPIO_DT_SPEC_GET(DT_ALIAS(led3), gpios);
+//static const struct gpio_dt_spec led3 = GPIO_DT_SPEC_GET(DT_ALIAS(led3), gpios);
 
 static struct gpio_dt_spec led[NB_LED];
 static bool led_state[NB_LED]; /* Tracking state here supports GPIO expander-based LEDs. */
@@ -71,7 +71,7 @@ int led_init(void) {
     memcpy(&led[0], &led0, sizeof(struct gpio_dt_spec));
     memcpy(&led[1], &led1, sizeof(struct gpio_dt_spec));
     memcpy(&led[2], &led2, sizeof(struct gpio_dt_spec));
-    memcpy(&led[3], &led3, sizeof(struct gpio_dt_spec));
+    // memcpy(&led[3], &led3, sizeof(struct gpio_dt_spec));
 
     for (int i = 0; i < NB_LED; i++) {
         led_ok = device_is_ready(led[i].port);
